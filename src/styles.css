@@ -1,0 +1,50 @@
+.navbar {
+    background-color: #79c0ef; 
+}
+  
+.nav-link {
+    color:rgb(144, 43, 92);
+}
+  
+.nav-link:hover {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 50px);
+}
+
+.square {
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+    color:#e8e5e5;
+    border: solid 1px black;
+}
+
+.square_o{
+    background-color: rgb(87, 218, 21);
+}
+
+.square_x{
+    background-color: crimson;
+}
+
+p {
+  font-size: 2rem;
+}
+
+.reset{
+  margin-top: 2rem;
+  font-size: 2rem;
+  background-color: aqua;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+

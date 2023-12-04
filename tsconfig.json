@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "traceResolution": true,
     "lib": [
       "dom",
       "dom.iterable",
