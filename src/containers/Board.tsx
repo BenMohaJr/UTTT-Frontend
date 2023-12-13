@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState, useEffect } from 'react';
 import Tile from './Tile';
 import '../styles.css';
@@ -6,16 +8,20 @@ import { Container } from 'react-bootstrap';
 export const BOARD_SIZE = 9;
 const TILES_IN_ROW = 3;
 
+type Choice = 'O' | 'X';
+
 interface BoardProps {
   onReset: () => void;
+  boardPosX: number;
+  boardPosY: number;
 }
 
-function Board({ onReset }: BoardProps) {
+function Board({ onReset, boardPosX, boardPosY }: BoardProps) {
   const [squares, setSquares] = useState(Array(BOARD_SIZE).fill(null));
   const [currentPlayer, setCurrentPlayer] = useState<'X' | 'O'>(
     Math.random() < 0.5 ? 'X' : 'O'
   );
-  const [winner, setWinner] = useState<null | 'X' | 'O'>(null);
+  const [winner, setWinner] = useState<null | Choice>(null);
 
   useEffect(() => {
     checkWinner();
@@ -90,22 +96,30 @@ function Board({ onReset }: BoardProps) {
   }
 
   return (
-    <Container>
-      <div className="grid">
-        {Array(BOARD_SIZE)
-          .fill(null)
-          .map((_, index) => (
-            <Tile
-              winner={winner}
-              key={index}
-              onClick={() => setTileValue(index)}
-              value={squares[index]}
-            />
-          ))}
-      </div>
-
-      <button onClick={reset}>Reset Board</button>
-    </Container>
+    <div className="border border-primary">
+      <Container
+        style={{
+          position: 'relative',
+          left: `${boardPosX * 40}px`,
+          top: `${boardPosY * 10}px`,
+          margin: 'auto',
+          padding: '20px'
+        }}
+      >
+        <div className="grid">
+          {Array(BOARD_SIZE)
+            .fill(null)
+            .map((_, index) => (
+              <Tile
+                winner={winner}
+                key={index}
+                onClick={() => setTileValue(index)}
+                value={squares[index]}
+              />
+            ))}
+        </div>
+      </Container>
+    </div>
   );
 }
 

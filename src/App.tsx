@@ -9,14 +9,14 @@ import { Navbar } from './components/Navbar';
 
 function App() {
   return (
-    <>
+    <main>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/game" element={<Game />} />
       </Routes>
-    </>
+    </main>
   );
 }
 
