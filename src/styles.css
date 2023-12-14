@@ -1,3 +1,25 @@
+@keyframes animationX {
+    from {background-color: white;
+        transform: rotateY(0turn);
+    }
+    to {
+        background-color: rgb(87, 218, 21);
+        transform: rotateY(2turn);
+    }
+}
+
+@keyframes animationO {
+    from {background-color: white;
+        transform: rotateY(0turn);}
+    to {background-color: crimson;
+        transform: rotateY(2turn);}
+}
+
+@keyframes rotate{
+    from {transform: rotateY(0turn);}
+    to {transform: rotateY(3turn);}
+}
+
 .navbar {
     background-color: #79c0ef; 
 }
@@ -23,6 +45,9 @@
     font-size: 2rem;
     color:#e8e5e5;
     border: solid 1px black;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
 }
 
 .square_o{
@@ -45,6 +70,19 @@ p {
   border-radius: 6px;
   padding: 1rem;
   cursor: pointer;
+}
+
+.animation_x {
+    background-color: rgb(87, 218, 21);
+    animation-name: animationX;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+.animation_o {
+    background-color: crimson;
+    animation-name: animationO;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
 

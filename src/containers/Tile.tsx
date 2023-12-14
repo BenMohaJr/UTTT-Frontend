@@ -14,7 +14,9 @@ function Tile({ value, onClick, winner }: TileProps) {
 
   return (
     <button
-      className={`square ${value ? `square_${value.toLowerCase()}` : ''}`}
+      className={`square ${value ? `square_${value.toLowerCase()}` : ''} ${
+        value ? `animation_${value.toLowerCase()}` : ''
+      }`}
       onClick={onClick}
       disabled={disabled}
     >

@@ -70,9 +70,14 @@ function Board({ onReset, boardPosX, boardPosY }: BoardProps) {
         squares[a] === squares[c]
       ) {
         setWinner(squares[a]);
+        PaintBoard(squares[a]);
         return;
       }
     }
+  }
+
+  function PaintBoard(winner: string) {
+    return;
   }
 
   function setTileValue(clickIndex: number) {
@@ -96,16 +101,17 @@ function Board({ onReset, boardPosX, boardPosY }: BoardProps) {
   }
 
   return (
-    <div className="border border-primary">
-      <Container
-        style={{
-          position: 'relative',
-          left: `${boardPosX * 40}px`,
-          top: `${boardPosY * 10}px`,
-          margin: 'auto',
-          padding: '20px'
-        }}
-      >
+    <div
+      className="border border-primary bg-white shadow-sm mb-3 "
+      style={{
+        position: 'relative',
+        left: `${boardPosX * 5}px`,
+        top: `${boardPosY * 5}px`,
+        margin: 'auto',
+        padding: '20px'
+      }}
+    >
+      <Container>
         <div className="grid">
           {Array(BOARD_SIZE)
             .fill(null)
