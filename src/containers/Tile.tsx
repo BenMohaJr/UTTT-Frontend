@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles.css';
-
+import { Button, Paper } from '@mui/material';
 export type Player = 'X' | 'O' | null;
 
 type TileProps = {
@@ -11,7 +11,6 @@ type TileProps = {
 
 function Tile({ value, onClick, winner }: TileProps) {
   const disabled = Boolean(value) || Boolean(winner);
-
   return (
     <button
       className={`square ${value ? `square_${value.toLowerCase()}` : ''} ${

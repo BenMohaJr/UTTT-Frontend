@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Tile from './Tile';
 import '../styles.css';
-import { Container } from 'react-bootstrap';
+import { Box, Container, Grid, Paper } from '@mui/material';
 
 export const BOARD_SIZE = 9;
 const TILES_IN_ROW = 3;
@@ -101,31 +101,26 @@ function Board({ onReset, boardPosX, boardPosY }: BoardProps) {
   }
 
   return (
-    <div
-      className="border border-primary bg-white shadow-sm mb-3 "
-      style={{
-        position: 'relative',
-        left: `${boardPosX * 5}px`,
-        top: `${boardPosY * 5}px`,
-        margin: 'auto',
-        padding: '20px'
-      }}
-    >
-      <Container>
-        <div className="grid">
-          {Array(BOARD_SIZE)
-            .fill(null)
-            .map((_, index) => (
-              <Tile
-                winner={winner}
-                key={index}
-                onClick={() => setTileValue(index)}
-                value={squares[index]}
-              />
-            ))}
-        </div>
-      </Container>
-    </div>
+    // style={{
+    //   position: 'relative',
+    //   left: `${boardPosX * 5}px`,
+    //   top: `${boardPosY * 5}px`,
+    //   margin: 'auto',
+    //   padding: '20px'
+    // }}
+
+    <Paper>
+      {Array(BOARD_SIZE)
+        .fill(null)
+        .map((_, index) => (
+          <Tile
+            winner={winner}
+            key={index}
+            onClick={() => setTileValue(index)}
+            value={squares[index]}
+          />
+        ))}
+    </Paper>
   );
 }
 

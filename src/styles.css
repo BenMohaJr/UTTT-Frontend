@@ -33,16 +33,18 @@
     text-decoration: none;
 }
 
-.grid {
+.center-screen {
     display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(3, 50px);
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
 .square {
     width: 45px;
     height: 45px;
     font-size: 2rem;
+
     color:#e8e5e5;
     border: solid 1px black;
     animation-name: rotate;
@@ -85,4 +87,17 @@ p {
     animation-timing-function: ease-out;
 }
 
-
+.board-container {
+    display: flex;
+    justify-content: center;
+}
+  
+.board-paper {
+    width: 240px; /* Adjust the width based on your preference */
+    padding: 16px;
+}
+  
+.board-grid {
+    width: 100%;
+}
+  

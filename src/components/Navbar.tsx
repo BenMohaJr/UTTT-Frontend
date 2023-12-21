@@ -1,22 +1,41 @@
-import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import '../styles.css';
-export function Navbar() {
+// Navbar.tsx
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Stack,
+  Button,
+  CssBaseline,
+  Box
+} from '@mui/material';
+import { Grid3x3 } from '@mui/icons-material';
+
+export const Navbar = () => {
   return (
-    <NavbarBs className="bg-white shadow-sm mb-3 ">
-      <Container>
-        <Nav>
-          <Nav.Link to="/" as={NavLink}>
-            Home
-          </Nav.Link>
-          <Nav.Link to="/about" as={NavLink}>
-            About
-          </Nav.Link>
-          <Nav.Link to="/game" as={NavLink}>
+    <AppBar sx={{ background: 'black' }}>
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="logo">
+          <Grid3x3 />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Ultimate Tic Tac Toe
+        </Typography>
+        <Stack direction="row" spacing={2}>
+          <Button color="inherit" component={Link} to="/game">
             Game
-          </Nav.Link>
-        </Nav>
-      </Container>
-    </NavbarBs>
+          </Button>
+          <Button color="inherit" component={Link} to="/about">
+            About
+          </Button>
+          <Button color="inherit" component={Link} to="/">
+            Home
+          </Button>
+        </Stack>
+      </Toolbar>
+    </AppBar>
   );
-}
+};
