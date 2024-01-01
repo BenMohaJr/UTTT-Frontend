@@ -12,15 +12,17 @@ type TileProps = {
 function Tile({ value, onClick, winner }: TileProps) {
   const disabled = Boolean(value) || Boolean(winner);
   return (
-    <button
-      className={`square ${value ? `square_${value.toLowerCase()}` : ''} ${
-        value ? `animation_${value.toLowerCase()}` : ''
-      }`}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {value}
-    </button>
+    <Paper>
+      <button
+        className={`square ${value ? `square_${value.toLowerCase()}` : ''} ${
+          value ? `animation_${value.toLowerCase()}` : ''
+        }`}
+        onClick={onClick}
+        disabled={disabled}
+      >
+        {value}
+      </button>
+    </Paper>
   );
 }
 

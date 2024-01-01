@@ -41,16 +41,14 @@ export function Game() {
   }, boards);
 
   return (
-    <Box>
+    <Box className="center-screen">
       <ResetButton onClick={() => buildBoard()}></ResetButton>
-      <Box className="center-screen">
-        <Grid container className="accordion-item" spacing={3} xs={2}>
-          {boards.map((row, index) => (
-            <Grid item key={index}>
-              {row}
-            </Grid>
-          ))}
-        </Grid>
+      <Box>
+        {boards.map((row, index) => (
+          <Grid container spacing={0} key={index}>
+            {row}
+          </Grid>
+        ))}
       </Box>
     </Box>
   );

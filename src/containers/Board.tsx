@@ -100,6 +100,17 @@ function Board({ onReset, boardPosX, boardPosY }: BoardProps) {
     onReset();
   }
 
+  const renderTile = (index: number) => {
+    return (
+      <Tile
+        winner={winner}
+        key={index}
+        onClick={() => setTileValue(index)}
+        value={squares[index]}
+      />
+    );
+  };
+
   return (
     // style={{
     //   position: 'relative',
@@ -109,18 +120,41 @@ function Board({ onReset, boardPosX, boardPosY }: BoardProps) {
     //   padding: '20px'
     // }}
 
-    <Paper>
-      {Array(BOARD_SIZE)
-        .fill(null)
-        .map((_, index) => (
-          <Tile
-            winner={winner}
-            key={index}
-            onClick={() => setTileValue(index)}
-            value={squares[index]}
-          />
-        ))}
-    </Paper>
+    <div>
+      <Grid container spacing={1} justifyContent="center">
+        <Grid item spacing={3}>
+          {renderTile(0)}
+        </Grid>
+        <Grid item spacing={3}>
+          {renderTile(1)}
+        </Grid>
+        <Grid item spacing={3}>
+          {renderTile(2)}
+        </Grid>
+      </Grid>
+      <Grid container spacing={1} justifyContent="center">
+        <Grid item spacing={3}>
+          {renderTile(3)}
+        </Grid>
+        <Grid item spacing={3}>
+          {renderTile(4)}
+        </Grid>
+        <Grid item spacing={3}>
+          {renderTile(5)}
+        </Grid>
+      </Grid>
+      <Grid container spacing={1} justifyContent="center">
+        <Grid item spacing={3}>
+          {renderTile(6)}
+        </Grid>
+        <Grid item spacing={3}>
+          {renderTile(7)}
+        </Grid>
+        <Grid item spacing={3}>
+          {renderTile(8)}
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 
