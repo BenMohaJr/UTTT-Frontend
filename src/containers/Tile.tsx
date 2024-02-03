@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles.css';
-import { Button, Paper } from '@mui/material';
+import { Button } from '@mui/material';
 export type Player = 'X' | 'O' | null;
 
 type TileProps = {
@@ -12,8 +12,10 @@ type TileProps = {
 function Tile({ value, onClick, winner }: TileProps) {
   const disabled = Boolean(value) || Boolean(winner);
   return (
-    <Paper>
-      <button
+    <div>
+      <Button
+        variant="contained"
+        color="primary"
         className={`square ${value ? `square_${value.toLowerCase()}` : ''} ${
           value ? `animation_${value.toLowerCase()}` : ''
         }`}
@@ -21,8 +23,8 @@ function Tile({ value, onClick, winner }: TileProps) {
         disabled={disabled}
       >
         {value}
-      </button>
-    </Paper>
+      </Button>
+    </div>
   );
 }
 

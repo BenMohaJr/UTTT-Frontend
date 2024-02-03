@@ -4,6 +4,7 @@ import { ResetButton } from '../components/ResetButton';
 import Board, { BOARD_SIZE } from '../containers/Board';
 import { Box, Grid } from '@mui/material';
 import '../styles.css';
+import { Height } from '@mui/icons-material';
 
 export function Game() {
   const boards: JSX.Element[][] = [];
@@ -41,12 +42,20 @@ export function Game() {
   }, boards);
 
   return (
-    <Box className="center-screen">
+    <Box>
       <ResetButton onClick={() => buildBoard()}></ResetButton>
-      <Box>
+      <Box
+        display={'flex'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        style={{ height: '100vh' }}
+        sx={{ flexGrow: 1 }}
+      >
         {boards.map((row, index) => (
-          <Grid container spacing={0} key={index}>
-            {row}
+          <Grid container spacing={1} key={index} xs={3}>
+            <Grid container item spacing={3}>
+              {row}
+            </Grid>
           </Grid>
         ))}
       </Box>

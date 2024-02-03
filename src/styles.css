@@ -1,31 +1,42 @@
+/* Keyframes */
 @keyframes animationX {
-    from {background-color: white;
+    from {
+        background-color: #1976d2;
         transform: rotateY(0turn);
     }
     to {
-        background-color: rgb(87, 218, 21);
+        background-color: crimson;
         transform: rotateY(2turn);
     }
 }
 
 @keyframes animationO {
-    from {background-color: white;
-        transform: rotateY(0turn);}
-    to {background-color: crimson;
-        transform: rotateY(2turn);}
+    from {
+        background-color: #1976d2;
+        transform: rotateY(0turn);
+    }
+    to {
+        background-color: limegreen;
+        transform: rotateY(2turn);
+    }
 }
 
-@keyframes rotate{
-    from {transform: rotateY(0turn);}
-    to {transform: rotateY(3turn);}
+@keyframes rotate {
+    from {
+        transform: rotateY(0turn);
+    }
+    to {
+        transform: rotateY(3turn);
+    }
 }
 
+/* Navigation */
 .navbar {
     background-color: #79c0ef; 
 }
   
 .nav-link {
-    color:rgb(144, 43, 92);
+    color: rgb(144, 43, 92);
 }
   
 .nav-link:hover {
@@ -33,6 +44,7 @@
     text-decoration: none;
 }
 
+/* Layout */
 .center-screen {
     display: grid;
     align-items: center;
@@ -40,51 +52,67 @@
     min-height: 100vh;
 }
 
+/* Tic Tac Toe Square */
 .square {
     width: 45px;
     height: 45px;
     font-size: 2rem;
-
-    color:#e8e5e5;
-    border: solid 1px black;
     animation-name: rotate;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
 }
 
-.square_o{
-    background-color: rgb(87, 218, 21);
-}
-
-.square_x{
+.square.square_x {
     background-color: crimson;
 }
 
-p {
-  font-size: 2rem;
+.square.square_o {
+    background-color: limegreen;
 }
 
-.reset{
-  margin-top: 2rem;
-  font-size: 2rem;
-  background-color: aqua;
-  border: none;
-  border-radius: 6px;
-  padding: 1rem;
-  cursor: pointer;
-}
-
-.animation_x {
-    background-color: rgb(87, 218, 21);
+.square.square_x.animation_x {
     animation-name: animationX;
     animation-duration: 2s;
     animation-timing-function: ease-out;
 }
-.animation_o {
-    background-color: crimson;
+
+.square.square_o.animation_o {
     animation-name: animationO;
     animation-duration: 2s;
     animation-timing-function: ease-out;
+}
+
+.square.square_x:disabled {
+    background-color: crimson; 
+    color: #000;
+}
+
+.square.square_o:disabled {
+    background-color: limegreen; 
+    color: #000; 
+}
+
+.square.square_x:hover {
+    background-color: crimson;
+}
+
+.square.square_o:hover {
+    background-color: limegreen; 
+}
+
+/* Other Styles */
+p {
+    font-size: 2rem;
+}
+
+.reset {
+    margin-top: 2rem;
+    font-size: 2rem;
+    background-color: aqua;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    cursor: pointer;
 }
 
 .board-container {
@@ -100,4 +128,3 @@ p {
 .board-grid {
     width: 100%;
 }
-  

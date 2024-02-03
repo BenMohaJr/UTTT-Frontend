@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Tile from './Tile';
 import '../styles.css';
 import { Box, Container, Grid, Paper } from '@mui/material';
+import React from 'react';
 
 export const BOARD_SIZE = 9;
 const TILES_IN_ROW = 3;
@@ -112,49 +113,17 @@ function Board({ onReset, boardPosX, boardPosY }: BoardProps) {
   };
 
   return (
-    // style={{
-    //   position: 'relative',
-    //   left: `${boardPosX * 5}px`,
-    //   top: `${boardPosY * 5}px`,
-    //   margin: 'auto',
-    //   padding: '20px'
-    // }}
-
-    <div>
-      <Grid container spacing={1} justifyContent="center">
-        <Grid item spacing={3}>
-          {renderTile(0)}
-        </Grid>
-        <Grid item spacing={3}>
-          {renderTile(1)}
-        </Grid>
-        <Grid item spacing={3}>
-          {renderTile(2)}
-        </Grid>
-      </Grid>
-      <Grid container spacing={1} justifyContent="center">
-        <Grid item spacing={3}>
-          {renderTile(3)}
-        </Grid>
-        <Grid item spacing={3}>
-          {renderTile(4)}
-        </Grid>
-        <Grid item spacing={3}>
-          {renderTile(5)}
-        </Grid>
-      </Grid>
-      <Grid container spacing={1} justifyContent="center">
-        <Grid item spacing={3}>
-          {renderTile(6)}
-        </Grid>
-        <Grid item spacing={3}>
-          {renderTile(7)}
-        </Grid>
-        <Grid item spacing={3}>
-          {renderTile(8)}
-        </Grid>
-      </Grid>
-    </div>
+    <React.Fragment>
+      <Grid item>{renderTile(0)}</Grid>
+      <Grid item>{renderTile(1)}</Grid>
+      <Grid item>{renderTile(2)}</Grid>
+      <Grid item>{renderTile(3)}</Grid>
+      <Grid item>{renderTile(4)}</Grid>
+      <Grid item>{renderTile(5)}</Grid>
+      <Grid item>{renderTile(6)}</Grid>
+      <Grid item>{renderTile(7)}</Grid>
+      <Grid item>{renderTile(8)}</Grid>
+    </React.Fragment>
   );
 }
 
